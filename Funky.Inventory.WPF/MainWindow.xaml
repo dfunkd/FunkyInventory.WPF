@@ -8,44 +8,17 @@
         mc:Ignorable="d"
         AllowsTransparency="True"
         Background="Transparent"
-        WindowStyle="None"
-        Height="450"
+        Height="900"
         Title="MainWindow"
-        Width="800">
+        Width="1600"
+        WindowStartupLocation="CenterOwner"
+        WindowStyle="None">
 
-    <!--<Window.Resources>
-        <Style x:Key="LeftScrollViewer" TargetType="{x:Type ScrollViewer}">
-            <Setter Property="OverridesDefaultStyle" Value="True" />
-            <Setter Property="Template">
-                <Setter.Value>
-                    <ControlTemplate TargetType="{x:Type ScrollViewer}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="Auto" />
-                                <ColumnDefinition />
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition />
-                                <RowDefinition Height="Auto" />
-                            </Grid.RowDefinitions>
-                            <Border Grid.Column="1" BorderThickness="0,1,1,1" CornerRadius="5">
-                                <Border.BorderBrush>
-                                    <SolidColorBrush Color="{DynamicResource BorderMediumColor}" />
-                                </Border.BorderBrush>
-                                <ScrollContentPresenter CanContentScroll="{TemplateBinding CanContentScroll}" />
-                            </Border>
-                            <ScrollBar x:Name="PART_VerticalScrollBar" Value="{TemplateBinding VerticalOffset}" Maximum="{TemplateBinding ScrollableHeight}" ViewportSize="{TemplateBinding ViewportHeight}"
-                                       Visibility="{TemplateBinding ComputedVerticalScrollBarVisibility}"/>
-                            <ScrollBar x:Name="PART_HorizontalScrollBar" Orientation="Horizontal" Grid.Row="1" Grid.Column="1" Value="{TemplateBinding HorizontalOffset}"
-                                       Maximum="{TemplateBinding ScrollableWidth}" ViewportSize="{TemplateBinding ViewportWidth}" Visibility="{TemplateBinding ComputedHorizontalScrollBarVisibility}"/>
-                        </Grid>
-                    </ControlTemplate>
-                </Setter.Value>
-            </Setter>
-        </Style>
-    </Window.Resources>-->
+    <Window.Resources>
+        
+    </Window.Resources>
 
-    <Border CornerRadius="25" BorderBrush="Black" BorderThickness="2">
+    <Border CornerRadius="25" BorderBrush="Black" BorderThickness="1">
         <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="1*" />
@@ -58,24 +31,70 @@
             </Grid.RowDefinitions>
 
             <!--Row 0-->
-            <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" BorderBrush="Transparent" CornerRadius="25, 25, 0, 0">
+            <Border Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="0" BorderBrush="Transparent" CornerRadius="25, 25, 0, 0"
+                    MouseLeftButtonDown="OnMouseLeftButtonDown">
                 <Border.Background>
                     <LinearGradientBrush StartPoint="0.5, 0" EndPoint="0.5, 1">
                         <GradientStop Color="#444746" Offset="0" />
                         <GradientStop Color="#212529" Offset="1" />
                     </LinearGradientBrush>
                 </Border.Background>
+                
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="75" />
+                    </Grid.ColumnDefinitions>
 
-                <TextBlock Foreground="#E8E8FD" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Text="Funky Recipes" VerticalAlignment="Center" />
+                    <TextBlock Grid.Column="1" Foreground="#E8E8FD" FontSize="24" FontWeight="Bold" HorizontalAlignment="Center" Text="Funky Recipes"
+                               VerticalAlignment="Center" />
+
+                    <Button x:Name="btnClose" Grid.Column="2" Click="OnCloseClick" Content="X" HorizontalAlignment="Center" Margin="15, 0" Padding="5, 0" VerticalAlignment="Center">
+                        <Button.Style>
+                            <Style TargetType="{x:Type Button}">
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="White" />
+                                <Setter Property="BorderThickness" Value="2" />
+                                <Setter Property="FontSize" Value="24" />
+                                <Setter Property="FontWeight" Value="Bold" />
+                                <Setter Property="Foreground" Value="#FFE8EDF9" />
+                                <Setter Property="Template">
+                                    <Setter.Value>
+                                        <ControlTemplate TargetType="{x:Type Button}">
+                                            <Border Background="{TemplateBinding Background}">
+                                                <ContentPresenter/>
+                                            </Border>
+                                        </ControlTemplate>
+                                    </Setter.Value>
+                                </Setter>
+                                <Style.Triggers>
+                                    <Trigger Property="IsMouseOver" Value="True">
+                                        <Setter Property="Button.Effect">
+                                            <Setter.Value>
+                                                <DropShadowEffect BlurRadius="50" Color="#E8E8FD" Direction="0" Opacity="1" ShadowDepth="10" />
+                                            </Setter.Value>
+                                        </Setter>
+                                    </Trigger>
+                                </Style.Triggers>
+                            </Style>
+                        </Button.Style>
+                    </Button>
+                </Grid>
             </Border>
 
             <!--Row 1-->
-            <ScrollViewer Grid.Column="0" Grid.Row="1" Background="#212529" BorderBrush="#C7C7C7" HorizontalScrollBarVisibility="Auto" Style="{DynamicResource ResourceKey=styleScrollViewer}"
-                          VerticalScrollBarVisibility="Auto">
-                <DataGrid x:Name="dgRecipeNames" Background="#212529">
-                    
-                </DataGrid>
-            </ScrollViewer>
+            <Grid Grid.Column="0" Grid.Row="1" Background="#212529">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                <Button Grid.Row="0" Margin="10, 10, 10, 0" Background="#444746" Content="Create" Foreground="#E8E8FD" />
+                <ListView x:Name="lvRecipeNames" Grid.Row="1" Background="#212529" Margin="10, 0">
+
+                </ListView>
+            </Grid>
             <Grid Grid.Column="1" Grid.Row="1" Background="#212529">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="50" />
@@ -90,7 +109,7 @@
                         </LinearGradientBrush>
                     </Border.Background>
                     <Border.Effect>
-                        <DropShadowEffect BlurRadius="5" Color="#E8E8FD" Direction="270" Opacity="0.5" ShadowDepth="10" />
+                        <DropShadowEffect BlurRadius="20" Color="#E8E8FD" Direction="270" Opacity="0.5" ShadowDepth="10" />
                     </Border.Effect>
 
                     <TextBlock Foreground="#E8E8FD" FontWeight="Bold" HorizontalAlignment="Left" Margin="10, 0" Text="Recipe Name" VerticalAlignment="Center" />
