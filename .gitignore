@@ -3,3 +3,10 @@
 ################################################################################
 
 /.vs
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Funky.Inventory.WPF.dll
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Funky.Inventory.WPF.exe
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Funky.Inventory.WPF.pdb
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/ref/Funky.Inventory.WPF.dll
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/refint/Funky.Inventory.WPF.dll
+*.baml
+/Funky.Inventory.WPF/obj
