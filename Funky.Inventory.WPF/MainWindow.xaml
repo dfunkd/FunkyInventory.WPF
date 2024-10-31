@@ -11,7 +11,7 @@
         Height="900"
         Title="MainWindow"
         Width="1600"
-        WindowStartupLocation="CenterOwner"
+        WindowStartupLocation="CenterScreen"
         WindowStyle="None">
 
     <Window.Resources>
