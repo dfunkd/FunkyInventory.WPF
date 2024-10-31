@@ -10,3 +10,11 @@
 /Funky.Inventory.WPF/obj/Debug/net8.0-windows/refint/Funky.Inventory.WPF.dll
 *.baml
 /Funky.Inventory.WPF/obj
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/Funky.Inventory.WPF.assets.cache
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/Funky.Inventory.WPF.GeneratedMSBuildEditorConfig.editorconfig
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/Funky.Inventory.WPF.assets.cache
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/Funky.Inventory.WPF.GeneratedMSBuildEditorConfig.editorconfig
+/Funky.Inventory.WPF/obj/Funky.Inventory.WPF.csproj.nuget.dgspec.json
+/Funky.Inventory.WPF/obj/Funky.Inventory.WPF.csproj.nuget.g.props
+/Funky.Inventory.WPF/obj/project.assets.json
+/Funky.Inventory.WPF/obj/project.nuget.cache
