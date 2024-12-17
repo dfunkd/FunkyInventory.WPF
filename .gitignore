@@ -18,3 +18,12 @@
 /Funky.Inventory.WPF/obj/Funky.Inventory.WPF.csproj.nuget.g.props
 /Funky.Inventory.WPF/obj/project.assets.json
 /Funky.Inventory.WPF/obj/project.nuget.cache
+*.dll
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Azure.Core.dll
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Azure.Identity.dll
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Microsoft.Data.SqlClient.dll
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Microsoft.Identity.Client.dll
+/Funky.Inventory.WPF/bin/Debug/net8.0-windows/Microsoft.IdentityModel.Tokens.dll
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/Funky.Inventory.WPF.designer.runtimeconfig.json
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/Funky.Inventory.WPF.genruntimeconfig.cache
+/Funky.Inventory.WPF/obj/Debug/net8.0-windows/MainWindow.g.i.cs
